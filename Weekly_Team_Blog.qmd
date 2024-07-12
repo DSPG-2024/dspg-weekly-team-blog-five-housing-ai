@@ -57,7 +57,7 @@ import pandas as pd
 print("Currently using Pandas Version:", pd.__version__)
 ```
 
-## Chatbot: Structured Data
+## Query: Structured Data 
 
 Under the hood of the model's workflow when a query on structured data is made:
 
