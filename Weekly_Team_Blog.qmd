@@ -6,6 +6,7 @@ categories: ["Week Five"]
 format: html
 lightbox: true
 ---
+
 ```{r, eval = FALSE}
 #| echo: FALSE
 usethis :: use_package(package = "quarto", type = "Imports")
@@ -55,3 +56,19 @@ virtualenv_install(envname = "r-python", packages = c("numpy", "pandas", "scikit
 import pandas as pd
 print("Currently using Pandas Version:", pd.__version__)
 ```
+
+## Chatbot: Structured Data
+
+Under the hood of the model's workflow when a query on structured data is made:
+
+![](imgs/LLMStructuredOverview.png)
+
+## Overall Project Progress So Far!
+
+![](imgs/ProjectOverview.png)
+
+## Moving Forward
+
+-   Optimize the Chatbot to enhance its accuracy in extracting tables related to user query.
+
+-   Sourcing for housing-related websites (HUD, USDA.. etc) to incorporate into the Chatbot
