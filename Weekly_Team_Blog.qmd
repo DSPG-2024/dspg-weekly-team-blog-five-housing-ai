@@ -6,6 +6,7 @@ categories: ["Week Five"]
 format: html
 lightbox: true
 ---
+
 ```{r, eval = FALSE}
 #| echo: FALSE
 usethis :: use_package(package = "quarto", type = "Imports")
@@ -55,3 +56,29 @@ virtualenv_install(envname = "r-python", packages = c("numpy", "pandas", "scikit
 import pandas as pd
 print("Currently using Pandas Version:", pd.__version__)
 ```
+
+## Satellite Imagery
+
+This week, we completed the fine tuning of our image segmentation model using the National Agricultural Imagery Program(NAIP) and Polk County Building Footprints datasets. With the completion of this model, we are now able to identify buildings out of a satellite image with the goal of applying it to more rural communities. Next, we wanted to talk about how the model works and was developed. Below is a flowchart to help visualize the process.
+
+![](imgs/Sat_FlowCHart.jpg)
+
+#### Image Preprocessing
+
+To start off, we loaded in shape files containing the polygon geometry of census blocks of Polk County as well as the building footprints in Polk County. Next, we take these geometries to specify our location in in Earth Engine and cut them out of the NAIP image to get out regular image and our masks. From here we take the regular image and convert it from RGBA to RGB imagery and resize it to 1920 x 1080 pixels. For the masks resizing still applies but these get converted to gray scale images with any part not in the building cut out set to a pixel color of 0 and the buildings set to a value 1. The reason we do this is to get our images in the same format as the pretrained backbone model's images.
+
+#### Dataset and Fine Tuning
+
+To create our datasets, we take our preprocessed images and split them into a training dataset and a validation dataset making sure to keep our image masks in the same group as our true image. From here we assign our classification of our pixel values to be just the environment around a building or part of a building. This is why we specified our pixel values during preprocessing to 0 and 1 for masks. With this, we take our classifications and images and input them into the pretrained Segformer model so that we can fine tune it to be trained on our specific images and classifications. Once completed, we store our newly trained model.
+
+#### Inference
+
+Finally, we can now test our model on an image to see how it performs. Shown below is an example output of a prototype version of the model trained on only 5 images.
+
+![](imgs/Inference_Example.png)
+
+#### Biggest Takeaways
+
+-   The model performs well at identifying groups of buildings and buildings in the open
+-   Trees and other blockers cause some disruption with the model
+-   Training on larger set of images will be helpful which we have over 8000 to use
