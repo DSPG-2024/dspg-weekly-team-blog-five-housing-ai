@@ -9,7 +9,7 @@
 <meta name="author" content="Housing and AI">
 <meta name="dcterms.date" content="2024-07-12">
 
-<title>Housing and AI - Week Five</title>
+<title>Housing and AI Week Five</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +35,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="Weekly_Team_Blog_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Weekly_Team_Blog_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Weekly_Team_Blog_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Weekly_Team_Blog_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="Weekly_Team_Blog_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script src="Weekly_Team_Blog_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="Weekly_Team_Blog_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="Weekly_Team_Blog_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -50,7 +52,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Housing and AI - Week Five</h1>
+<h1 class="title">Housing and AI Week Five</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Week Five</div>
   </div>
@@ -121,6 +123,41 @@ ul.task-list li input[type="checkbox"] {
 <li>The model performs well at identifying groups of buildings and buildings in the open</li>
 <li>Trees and other blockers cause some disruption with the model</li>
 <li>Training on larger set of images will be helpful which we have over 8000 to use</li>
+</ul>
+</section>
+<section id="ui-features" class="level3">
+<h3 class="anchored" data-anchor-id="ui-features">UI Features</h3>
+<p>This We have also worked on Improvising the UI designing and add some new features to the UI.</p>
+<section id="search-functionality" class="level5">
+<h5 class="anchored" data-anchor-id="search-functionality">Search Functionality:</h5>
+<ul>
+<li>Filters chat list based on the search term entered by the user.</li>
+</ul>
+</section>
+<section id="chat-list-display" class="level5">
+<h5 class="anchored" data-anchor-id="chat-list-display">Chat List Display:</h5>
+<ul>
+<li>Shows a summary of each chat, including the first few words of the user’s message and a type indicator (Text, Image, Map).</li>
+</ul>
+</section>
+<section id="dynamic-filtering-interaction-features" class="level5">
+<h5 class="anchored" data-anchor-id="dynamic-filtering-interaction-features">Dynamic Filtering / Interaction Features:</h5>
+<ul>
+<li>Filters chats in real-time as the user types in the search input.</li>
+</ul>
+</section>
+<section id="text-and-map-generation" class="level5">
+<h5 class="anchored" data-anchor-id="text-and-map-generation">Text and Map Generation:</h5>
+<ul>
+<li>Generates content with descriptive text followed by an embedded map iframe.</li>
+</ul>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="/imgs/UI_Dspg_1080p.mov"></video></div>
+</section>
+</section>
+<section id="moving-forward-1" class="level3">
+<h3 class="anchored" data-anchor-id="moving-forward-1">Moving Forward:</h3>
+<ul>
+<li>we will have feedback feature implemented and more UI enhancement!</li>
 </ul>
 </section>
 </section>
@@ -537,7 +574,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

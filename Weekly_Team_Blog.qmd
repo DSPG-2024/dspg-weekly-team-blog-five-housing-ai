@@ -57,7 +57,7 @@ import pandas as pd
 print("Currently using Pandas Version:", pd.__version__)
 ```
 
-## Chatbot: Structured Data
+## Query: Structured Data 
 
 Under the hood of the model's workflow when a query on structured data is made:
 
@@ -98,3 +98,25 @@ Finally, we can now test our model on an image to see how it performs. Shown bel
 -   The model performs well at identifying groups of buildings and buildings in the open
 -   Trees and other blockers cause some disruption with the model
 -   Training on larger set of images will be helpful which we have over 8000 to use
+
+
+### UI Features 
+
+This We have also worked on Improvising the UI designing and add some new features to the UI.
+
+##### Search Functionality: 
+- Filters chat list based on the search term entered by the user.
+
+##### Chat List Display: 
+- Shows a summary of each chat, including the first few words of the user's message and a type indicator (Text, Image, Map).
+
+##### Dynamic Filtering / Interaction Features:
+- Filters chats in real-time as the user types in the search input.
+
+##### Text and Map Generation:
+- Generates content with descriptive text followed by an embedded map iframe.
+
+{{<video /imgs/UI_Dspg_1080p.mov>}} 
+
+### Moving Forward:
+- we will have feedback feature implemented and more UI enhancement! 
