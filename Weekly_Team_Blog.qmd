@@ -1,5 +1,5 @@
 ---
-title: "Housing and AI - Week Five"
+title: "Housing and AI Week Five"
 author: ["Housing and AI"]
 date: "7/12/2024"
 categories: ["Week Five"]
