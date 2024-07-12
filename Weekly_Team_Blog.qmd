@@ -67,6 +67,10 @@ Under the hood of the model's workflow when a query on structured data is made:
 
 ![](imgs/ProjectOverview.png)
 
+## **Biggest Takeaway**
+
+-   Having more accurate and clear information about the Metadata for the database to help easier and efficient integration into the LLM
+
 ## Moving Forward
 
 -   Optimize the Chatbot to enhance its accuracy in extracting tables related to user query.
