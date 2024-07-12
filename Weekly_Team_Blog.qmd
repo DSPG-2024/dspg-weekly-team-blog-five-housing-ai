@@ -1,20 +1,36 @@
 ---
-title: "- Week Two"
-author: ["Housing and AI", "Community Capitals", "Iowa Zoning Guide"]
-date: "6/7/2024"
-categories: ["Week Two"]
+title: "Housing and AI - Week Five"
+author: ["Housing and AI"]
+date: "7/12/2024"
+categories: ["Week Five"]
 format: html
+lightbox: true
 ---
-
-```{r setup, include=FALSE}
-library(reticulate)
+```{r, eval = FALSE}
+#| echo: FALSE
+usethis :: use_package(package = "quarto", type = "Imports")
+usethis :: use_package(package = "reticulate", type = "Imports")
 ```
 
-```{r}
+```{r, eval=FALSE, message=FALSE}
+#| echo: FALSE
+install.packages('reticulate')
+install.packages('quarto')
+```
+
+```{r setup, include=FALSE}
+#| echo: FALSE
+library(reticulate)
+library(quarto)
+```
+
+```{r, eval=FALSE}
+#| echo: false
 print("First some R Code")
 ```
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, message=FALSE}
+#| echo: FALSE
 # Check for virtual environment, if it doesn't exist, create the venv, if it exists
 # then use the venv called "r-python"
 
@@ -26,13 +42,16 @@ if (virtualenv_exists("r-python")) {
 }
 ```
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, message = FALSE}
+#| echo: FALSE
+#| output: FALSE
 # Installing dependencies for the python virtualenv
 
 virtualenv_install(envname = "r-python", packages = c("numpy", "pandas", "scikit-learn"), all = TRUE)
 ```
 
-```{python}
+```{python, message = FALSE, eval = FALSE}
+#| echo: FALSE
 import pandas as pd
 print("Currently using Pandas Version:", pd.__version__)
 ```
